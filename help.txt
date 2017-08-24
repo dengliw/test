@@ -1,0 +1,6 @@
+1.问题：
+To git@github.com:dengliw/test.git  ! [rejected]        master -> master (fetch first) error: failed
+
+解决方法：
+可以通过如下命令进行代码合并【注：pull=fetch+merge]
+git pull --rebase origin master
