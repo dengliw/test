@@ -1,0 +1,441 @@
+在一台64位计算机上，以下哪段c语言代码与代码(x[2] + 4)[3]等价（x的类型是int **）
+	
+ *((*(x + 16)) + 28)
+	
+ *((*(x + 2)) + 7)
+	
+ **(x + 28)
+	
+ *(((*x) + 2) + 7)
+	
+ *(((*x) + 16) + 28)
+	
+ **(x + 9)
+
+
+
+
+关于iOS和Android应用以下描述错误的是：
+	
+iOS和Android应用界面都可以通过IDE可视化界面拖拽完成布局，也可以在运行时通过代码布局
+	
+Objective C的ARC和Java的GC，都是一种运行时内存管理机制
+	
+iOS和Android应用都可以发布或接收通知来进行跨进程通信
+	
+iOS和Android应用都在调用某些系统功能如相机时，需预先拥有相应权限
+	
+iOS和Android应用都拥有各自独立、安全隔离的文件空间
+	
+iOS和Android应用都可以注册自定义URL Scheme
+
+
+
+
+堆栈中有元素abcdef，每次出栈可以选择一个或者两个元素栈，当有两个元素出栈时可以选择其中一个重新入栈，则所有元素为空，那么可能的出栈方式有()种？
+	
+23
+	
+22
+	
+21
+	
+20
+	
+19
+	
+18
+
+
+
+
+
+
+下列关于linux中kernel space和user space描述错误的是：
+	
+user space不能直接对文件进行写操作
+	
+程序代码能手动指定在哪个space中运行
+	
+user space不能直接创建进程
+	
+user space和kernel space的运行空间是相互隔离的
+	
+kernel space可以执行任意系统命令
+	
+user space中运行出错不会影响kernel space
+
+
+
+
+
+
+6 单项选择题
+请阅读下面代码，计算运行结果：
+public class C {
+ 
+    static class A{
+ 
+    }
+ 
+    static class B extends  A{
+ 
+    }
+ 
+    public static void main(String[] args) {
+        ArrayList<A> list=new ArrayList<A>();
+        list.add(new B());
+        method1(list);
+    }
+ 
+    public static void method1(List<?[侯萍1]  super A> list){
+        for(int i=0;i<list.size();i++){
+          A a= list.get(0);
+        }
+    }
+}
+以上程序的运行结果可能会出现的是：
+	
+list.add(new B())编译报错
+	
+method1(list)编译报错
+	
+A a=list.get(0)编译报错
+	
+程序正常运行
+	
+list.add(new B())与method1(list)都编译报错
+	
+list.add(new B())与A a=list.get(0);编译报错
+
+
+
+
+
+7 单项选择题
+请阅读下面代码，计算运行结果：
+public class ThreadTest {
+    private static AtomicInteger atomicInteger =new AtomicInteger();
+ 
+    public static void main(String[] args) {
+        A a =new A();
+        try {
+            atomicInteger.wait();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        a.start();
+    }
+ 
+     static class   A extends Thread{
+        @Override
+        public void run(){
+            atomicInteger.notify();
+            atomicInteger.lazySet(1);
+      System.out.println(atomicInteger.get());
+ 
+        }
+    }
+}
+ 
+      
+以上程序的运行结果是：
+	
+编译报错，有未捕捉的异常
+	
+程序正常运行后，一直hold
+	
+程序正常运行，控制台打印出1
+	
+程序正常运行，控制台打印出0
+	
+程序编译通过，但运行时报错
+	
+以上都不对
+
+
+
+
+
+8 单项选择题
+在一台6G内存Linux操作系统的机器上，coredump打开且大小不做限制，执行下面的程序分别会发生什么?
+(1)
+#include <stdio.h>
+#include <stdlib.h>
+ 
+int32_t main() {
+  uint64_t size = 8 * 1024 * 1024 * 1024L;
+  char* a = new char(size);
+  *(a + 1) = 'a';
+  return 0;
+}
+ 
+(2)
+#include <stdio.h>
+#include <stdlib.h>
+ 
+int32_t main() {
+  uint64_t size = 10 * 1024 * 1024 * 1024L;
+  char* a = new char(size);
+  return 0;
+}
+ 
+(3)
+#include <stdio.h>
+#include <stdlib.h>
+ 
+int32_t main() {
+  uint64_t size = 7 * 1024 * 1024 * 1024L;
+  char* a = new char(size);
+  *(a + size - 1) = 'a';
+  return 0;
+}
+	
+ coredump，coredump，coredump
+	
+ 正常，coredump, 正常
+	
+ 正常，正常，coredump
+	
+ coredump, 正常，coredump
+	
+ coredump，正常，正常
+	
+正常，coredump，coredump
+
+
+
+
+
+
+9 单项选择题
+下面程序的输出是（）
+#include <iostream>
+using namespace std;
+class A {
+    public:
+        A(int n): m_n(n) {}
+        int cal() {
+            int result = 0, i = 0, j = 0;
+            for (int k = m_n; k > 0; k--) {
+                if (j > 0)
+                    j = k * 10 + j;
+                else
+                    j = k;
+                while (j >= 10) {
+                    int t = j % 100;
+                    j = j / 100;
+                    result = ((i++ % 2 == 0) ? result + t :
+result - t);
+                }
+            }
+            if (j > 0)
+                result = ((i++ % 2 == 0) ? result + j : result - j);
+            return result;
+        }     private:
+        int m_n;
+};
+int main() {
+    A a = A(101);
+    cout << a.cal() << endl;
+    return 0;
+}
+	
+-80
+	
+-79
+	
+0
+	
+90
+	
+79
+	
+80
+
+
+以下描述正确的是：
+	
+线性规划问题是一个NP-Hard问题
+	
+因为单纯形法可以保证在有限步数内收敛，所以是复杂度为多项式级别的算法，用于解决线性规划问题
+	
+内点法只用于解决线性规划问题
+	
+线性规划区别于非线性规划的地方在于，其达到最优点的时候不需要满足K-K-T优化条件
+	
+一个可解的线性规划问题的主问题和对偶问题分别达到最优化的时候，最优值一定相等
+	
+以上都不对
+
+
+
+
+设有一个二维数组A[m][n]，假设A[0][1]存放位置在1601(10)，A[3][3]存放位置在1648(10)，每个元素占一个空间，问A[2][2](10)存放在什么位置？脚注(10)表示用10进制表示。
+	
+1616
+	
+1617
+	
+1618
+	
+1631
+	
+1632
+	
+1633
+
+
+
+天气预报说明天降水概率是84%，假设降水和时间无关，请问明天中午12点之前就降水的概率是多大？
+	
+ 30% 
+	
+40% 
+	
+50% 
+	
+60%
+	
+70% 
+	
+80%
+
+
+public class ListParamTest {
+   public static void resetList(List<Integer> dataList){
+      dataList.subList(2, 4).set(0,40);
+      dataList = new ArrayList<Integer>(dataList);
+      dataList.add(50);
+   }
+   public static void setOne(List<Integer> dataList){
+      dataList.set(3, 100);
+   }
+   public static void main(String[] args) {
+      List<Integer> dataList = new ArrayList<Integer>(Arrays.asList(10,20,30,null));
+      resetList(dataList);
+      setOne(dataList);
+      int sum = 0;
+      for(Integer v:dataList){
+         sum += v;
+      }
+      System.out.println(sum);
+   }
+}
+程序执行后，输出的结果是：
+	
+160
+	
+抛出UnsupportedOperationException异常
+	
+抛出NullPointerException异常
+	
+220
+	
+210
+	
+170
+
+
+
+
+一个等差数列第x,y,z三项的值分别是y,z,x，试求第x+y项和第z+y项的差值
+	
+-3
+	
+-2
+	
+-1
+	
+0
+	
+1
+	
+2
+
+
+在一个公司中，有10个团队，每个团队有10个成员，同一个团队中的每两个人都是好友，同时每个人都有3个其他团队的好友，假定这个公司的任意两个人都有一条好友链路将他们联系起来，则这个链路最长有多长？
+	
+经过11次好友关系
+	
+经过7次好友关系
+	
+经过13次好友关系
+	
+经过15次好友关系
+	
+经过18次好友关系
+	
+经过19次好友关系
+
+
+
+
+有下面一段C语言程序:
+for (int i = 5; i >= 0; i--) {
+  cout<< i-- <<endl;
+}
+请问，修改后可以让循环的执行次数最少的选项是 ( )
+	
+‘>’ 改成 ‘！’
+	
+‘i--’改成 ‘i -= 2’
+	
+‘i--’改成 ‘i /= 3’
+	
+‘0’改成‘3’
+	
+去掉‘>’
+	
+不修改
+
+
+机器学习中，下面哪个方法不是为了防止过拟合的
+	
+Batchnorm
+	
+Dropout
+	
+Weight decay
+	
+Dropconnect
+	
+Early stopping
+	
+Data augmentation
+
+
+
+
+
+20 单项选择题
+在关联规则挖掘算法中，有已知如下事务集，支持度support = 0.4，则下列选项不正确的是（）
+	
+ {Bread,Milk}是频繁项集
+	
+{ Bread,Milk,Beer}是{ Bread,Milk }的超集
+	
+{Bread,Milk}是频繁闭项集
+	
+{Bread,Milk}是闭项集
+	
+{Bread,Milk}是最大频繁项集
+	
+{Bread,Diaper}是频繁项集
+
+
+21 单项选择题
+评分卡算法（Score Card）是在金融领域广泛应用的一种评分算法，通过多个维度的评分汇总得到对于一个实体的总体评估，以下说法错误的是
+	
+评分卡的底层分类算法最常用的是逻辑回归算法，因此评分卡是一种相对白盒的算法。
+	
+评分卡算法其中一个重要的数据处理步骤是数据分箱，根据特征取值将数据离散化为若干区间，这种操作能对某些数据异常值进行处理。
+	
+评分卡算法中如果变量之间存在多重共线性，说明可能存在两个变量高度相关，需要进行降维或剔除变量。
+	
+评分卡中对用户分类使用的逻辑回归算法是广义线性回归模型的一种。
+	
+评分卡模型效果的验证可以通过ROC曲线来看。
+	
+评分卡中的逻辑回归算法可以用于二分类问题，而不能用于多分类问题。
+
