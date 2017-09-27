@@ -1,0 +1,63 @@
+1、插入排序
+​ void insertSort( int[] a , int n){
+    int i,j;
+    int temp;
+    for( i = 1; i < n; i++){
+      temp = a[i];
+      j = i - 1;
+      while( j > -1 && temp < a[j])
+      {
+          a[j + 1] = a[j];//记录后移
+          j--;
+      }   
+      a[j + 1] = temp;   
+    }
+    
+}
+
+
+2.判断完美数
+//已知输入数为n
+boolean judge( int n)
+{
+        static int sum = 0;
+    if(n <= 1)
+        return false;
+    //int m = (int)sqrt(n);    
+    for(int i = 1; i < n; i++)
+    {
+        if(n % i == 0)//判断是否是n的约数
+        {
+            sum += i;//约数相加
+        }
+        
+    }
+    if(sum == n)
+        return ture;//如果相等，返回真
+    else
+        return false;//否则，返回假
+}
+
+
+3.十进制转化为八进制
+
+输入数n（不包括小 数 ）
+void tran( int n){
+    int i = 0;
+    int t = n;
+    while(t > 0){//判断概述是几位数
+        t /= 10;
+        i++;
+    }
+    int length = (int)(i*5/4);//求出转换成8进制的位数
+    int a[length];
+    i = 0;
+    while( n > 0){
+        a[length-1] = n % 8 ;
+        n = n/8;
+        
+    }
+    
+    
+}
+
