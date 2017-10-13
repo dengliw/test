@@ -1,11 +1,12 @@
-package Á·Ï°»ù´¡;
+ï»¿package ç»ƒä¹ åŸºç¡€;
 
 import java.util.Scanner;
 import java.math.*;
 /*
- * ¶àÒæÍøÂç±ÊÊÔÌâ1
+ * å¤šç›Šç½‘ç»œç¬”è¯•é¢˜1
  * 
- * ²»ÓÃ°ü½«Ò»¸öÊı×ª³É¶ÔÓ¦µÄÕûÊı
+ UTF-8
+ * ä¸ç”¨åŒ…å°†ä¸€ä¸ªæ•°è½¬æˆå¯¹åº”çš„æ•´æ•°
  * */
 public class Demo {
 	public static
@@ -29,3 +30,5 @@ public class Demo {
 		
 	}
 }
+
+
