@@ -1,5 +1,5 @@
-package 练习基础;
-
+﻿package 练习基础;
+/*UTF-8*/
 import java.util.*;
 import java.lang.*;
 public class Dtest{

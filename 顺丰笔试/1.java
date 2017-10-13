@@ -1,4 +1,4 @@
-import java.io.*;
+ï»¿import java.io.*;
 import java.util.*;
 import java.text.*;
 import java.math.*;
@@ -7,12 +7,13 @@ import java.util.regex.*;
 public class Main {
 
 
-/*ÇëÍê³ÉÏÂÃæÕâ¸öº¯Êý£¬ÊµÏÖÌâÄ¿ÒªÇóµÄ¹¦ÄÜ
-µ±È»£¬ÄãÒ²¿ÉÒÔ²»°´ÕÕÏÂÃæÕâ¸öÄ£°åÀ´×÷´ð£¬ÍêÈ«°´ÕÕ×Ô¼ºµÄÏë·¨À´ ^-^ 
-******************************¿ªÊ¼Ð´´úÂë******************************/
+/*è¯·å®Œæˆä¸‹é¢è¿™ä¸ªå‡½æ•°ï¼Œå®žçŽ°é¢˜ç›®è¦æ±‚çš„åŠŸèƒ½
+å½“ç„¶ï¼Œä½ ä¹Ÿå¯ä»¥ä¸æŒ‰ç…§ä¸‹é¢è¿™ä¸ªæ¨¡æ¿æ¥ä½œç­”ï¼Œå®Œå…¨æŒ‰ç…§è‡ªå·±çš„æƒ³æ³•æ¥ ^-^ 
+UTF-8
+******************************å¼€å§‹å†™ä»£ç ******************************/
     static int solve(String s1, String s2) {
 		char[] str_1 = s1.toCharArray();
-        char[] str_2 = s2.toCharArray();//×ª³É×Ö·û´®Êý×é
+        char[] str_2 = s2.toCharArray();//è½¬æˆå­—ç¬¦ä¸²æ•°ç»„
         int num = 0;
         if(str_1.length == 0 && str_2.length == 0)
             return num;
@@ -20,7 +21,7 @@ public class Main {
             return str_2.length;
         else if(str_2.length == 0 )
             return str_1.length;
-        if(str_1.length != str_2.length)//Èç¹û³¤¶È²»ÏàµÈ£¬ÔòÈ¡×î³¤µÄ³¤¶È
+        if(str_1.length != str_2.length)//å¦‚æžœé•¿åº¦ä¸ç›¸ç­‰ï¼Œåˆ™å–æœ€é•¿çš„é•¿åº¦
     	{   
             num = str_1.length>str_2.length?str_1.length:str_2.length;
         	return num;
@@ -31,7 +32,7 @@ public class Main {
             num = -1;
             return num;
         }
-        num = str_1.length;//Èç¹û³¤¶ÈÏàµÈ
+        num = str_1.length;//å¦‚æžœé•¿åº¦ç›¸ç­‰
         for(int i = 0; i < str_1.length; i++){
             if(str_1[i] != str_2[i])
             {   
@@ -51,7 +52,7 @@ public class Main {
        
 
     
-/******************************½áÊøÐ´´úÂë******************************/
+/******************************ç»“æŸå†™ä»£ç ******************************/
 
 
     public static void main(String[] args){
