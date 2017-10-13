@@ -1,0 +1,92 @@
+﻿
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Main {
+
+/*
+******************************开始写代码******************************/
+    static int solve(String s1, String s2,String s3,String s4) {
+		char[] str_1 = s1.toCharArray();
+        char[] str_2 = s2.toCharArray();//转成字符串数组
+        char[] str_3 = s3.toCharArray();
+        int num = 0;
+       // if()
+        int a = judge(str_1[0]) ;
+        int b = judge(str_2[0]) ;
+        int c = judge(str_3[0]) ;
+        if(s4 != null)//多输入的格式判0
+            return 0;
+        if(str_1.length != 1 || str_2.length != 1 || str_3.length != 1)//每个字母长度不为1的判0
+            return 0;
+        if(a == 0 || b == 0 || c == 0)//字母不是a-g范围的判0
+            return 0;
+        if(a < b && b > c)
+            num = a + c;
+        else num = a + b + c;
+        return num;
+        }
+       
+	static int judge(char c){
+        //char[] str = s.toCharArray();
+        switch(c){
+            case 'a':
+                return 1;
+            case 'b':
+                return 2;
+            case 'c':
+                return 3;
+            case 'd':
+                return 4;
+            case 'e':
+                return 5;
+            case 'f':
+                return 6;
+            case 'g':
+                return 7;
+            default:
+                return 0;
+        }
+    }
+    
+/******************************结束写代码******************************/
+
+
+    public static void main(String[] args){
+        Scanner in = new Scanner(System.in);
+        int res;
+            
+        String _s1;
+        try {
+            _s1 = in.next();
+        } catch (Exception e) {
+            _s1 = null;
+        }
+        
+        String _s2;
+        try {
+            _s2 = in.next();
+        } catch (Exception e) {
+            _s2 = null;
+        }
+  		String _s3;
+        try{
+            _s3 = in.next();
+        } catch (Exception e){
+            _s3 = null;
+        }
+        String _s4;
+        try{
+            _s4 = in.next();
+        } catch (Exception e){
+            _s4 = null;
+        }
+        res = solve(_s1, _s2, _s3, _s4);
+        System.out.println(String.valueOf(res));    
+
+    }
+}

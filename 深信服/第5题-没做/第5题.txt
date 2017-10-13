@@ -1,0 +1,44 @@
+﻿import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Main {
+
+/*
+******************************开始写代码******************************/
+    static int solve(int a) {
+		int b = 0 ;
+        for( int i = 0; i <= a; i++){
+            if(judge(i) == 1)
+                b++;
+        }
+		return b;
+    }
+    
+    static int judge(int n) {
+        int res = 0;
+        String s = String.valueOf(n);
+        char[] str = s.toCharArray();
+        for(int i = 0; i < str.length/2; i++){
+            if(str[i] != str[length-1-i] )
+                return 0;
+            
+        }
+        return 1;
+    }
+/******************************结束写代码******************************/
+
+
+    public static void main(String[] args){
+        Scanner in = new Scanner(System.in);
+        int res = 0;
+        int num = 0;
+        while( num = Integer.parseInt(in.nextLine().trim()) != 0){
+            res = solve(num);
+            System.out.println(String.valueOf(res));
+        }    
+       
+    }
+}
